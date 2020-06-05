@@ -1,9 +1,11 @@
+// 深拷贝
 export function DeepClone(obj) {
   if (obj === null || typeof obj !== 'object') return obj;
   var cpObj = obj instanceof Array ? [] : {};
   for (var key in obj) cpObj[key] = DeepClone(obj[key]);
   return cpObj;
 }
+// 判断两个对象是否相等
 export function isObjEqual(obj1, obj2) {
   if ((obj1 === null && obj2 === null) || (typeof obj1 !== 'object' && typeof obj2 !== 'object')) {
     if (obj1 === obj2) return true
@@ -25,4 +27,15 @@ export function isObjEqual(obj1, obj2) {
     }
   }
   return false
+}
+// 节流
+export const throttle = (fn, wait) => {
+  let updateTime = Date.now()
+  return (...agr) => {
+    const now = Date.now()
+    if (now - updateTime > wait) {
+      fn.apply(this, agr)
+      updateTime = now
+    }
+  }
 }
