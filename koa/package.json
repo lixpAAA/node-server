@@ -1,0 +1,21 @@
+{
+  "name": "koa-test",
+  "version": "1.0.0",
+  "description": "打造node中间件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lxp",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.8.1",
+    "koa-better-body": "^3.0.4",
+    "koa-convert": "^1.2.0",
+    "koa-ejs": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "request": "^2.88.0",
+    "ws": "^7.3.0"
+  }
+}
