@@ -1,6 +1,6 @@
 var http = require('http')
 // github-webhook-handler 的绝对路径
-var createHandler = require('/usr/lib/node_modules/github-webhook-handler')
+var createHandler = require('C:/Users/S9026716/AppData/Roaming/npm/node_modules/github-webhook-handler')
 var handler = createHandler({ path: '/', secret: 'xxx' })
 // 上面的 secret 保持和 GitHub 后台设置的一致
 
@@ -18,7 +18,9 @@ http.createServer(function (req, res) {
     res.statusCode = 404
     res.end('no such location')
   })
-}).listen(7777) // 启动服务的端口，需要开放安全组
+}).listen(7777, function () {
+  console.log('this is running at port 7777')
+}) // 启动服务的端口，需要开放安全组
 
 handler.on('error', function (err) {
   console.error('Error:', err.message)
