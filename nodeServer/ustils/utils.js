@@ -39,3 +39,18 @@ export const throttle = (fn, wait) => {
     }
   }
 }
+// 数组乱序
+export function arrayShuffle(arr){
+  if(!Array.isArray(arr)) {
+    throw new Error('argument must be an array')
+  }
+  let end = arr.length
+  if(!end) {
+    return arr
+  }
+  while(end) {
+    let start = Math.floor(Math.random() * end--)
+    [arr[start], arr[end]] =  [arr[end], arr[start]]
+  }
+  return arr
+}
