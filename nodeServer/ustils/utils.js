@@ -39,6 +39,14 @@ export const throttle = (fn, wait) => {
     }
   }
 }
+// 防抖
+export function debounce(func, wait){
+  let timeId
+  return function(...args){
+    clearTimeout(timeId)
+    timeId = setTimeout(()=>func.apply(null,args), wait)
+  }
+}
 // 数组乱序
 export function arrayShuffle(arr){
   if(!Array.isArray(arr)) {
